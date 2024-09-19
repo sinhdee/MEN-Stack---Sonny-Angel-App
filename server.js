@@ -39,7 +39,7 @@ app.post("/sonnyangels", async (req, res) => {
     }
   
     try {
-      await sonnyangel.create(req.body);
+      await SonnyAngel.create(req.body);
       res.redirect("/sonnyangels");
     } catch (err) {
       res.status(400).json({ error: err.message });
