@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sonny Angel Show Page</title>
+  </head>
+  <body>
+    <h1>Sonny Angel Show Page</h1>
+    <h2>Name: <%=sonnyangel.name %></h2>
+
+    <% if (sonnyangel.isPulled) { %>
+    <p>This Sonny is already pulled!</p>
+    <% } else { %>
+    <p>This Sonny has not been pulled yet!</p>
+    <% } %>
+
+    <form method="POST" action="/sonnyangels/<%= sonnyangel._id%>?_method=DELETE">
+      <button type="submit">Delete Sonny Angel</button>
+    </form>
+
+    <section>
+      <a href="/sonnyangels/<%= sonnyangel._id%>/edit">Edit Sonny Angel</a>
+    </section>
+  </body>
+</html>

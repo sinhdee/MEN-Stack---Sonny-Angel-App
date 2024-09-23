@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sonny Angel Edit Page</title>
+  </head>
+  <body>
+    <h1>Sonny Angel Edit - <%= sonnyangel.name %></h1>
+    <form method="POST" action="/sonnyangels/<%=sonnyangel._id%>?_method=PUT">
+      <div>
+        <label for="name">Sonny Angel Name:</label>
+        <input type="text" name="name" id="name" value="<%= sonnyangel.name %>" />
+      </div>
+      <div>
+        <label for="isPulled">Is Pulled:</label>
+        <input type="checkbox" name="isPulled" id="isPulled" <%=
+        sonnyangel.isPulled ?"checked" : "" %> />
+      </div>
+
+      <button type="submit">Submit Sonny Angel Edit</button>
+    </form>
+  </body>
+</html>
