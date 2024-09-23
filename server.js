@@ -100,6 +100,16 @@ app.put("/sonnyangels/:id", async (req, res) => {
   }
 });
 
+// DELETE ROUTE
+app.delete("/sonnyangels/:id", async (req,res) => {
+  try {
+    await sonnyangel.findByIdAndDelete(req.params.id);
+    res.redirect("/sonnyangels");
+  } catch (err) {
+    console.log(err);
+    res.redirect("/sonnyangels");
+  }
+});
 //app.listen 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
