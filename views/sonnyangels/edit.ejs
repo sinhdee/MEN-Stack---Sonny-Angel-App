@@ -6,6 +6,7 @@
     <title>Sonny Angel Edit Page</title>
   </head>
   <body>
+    <%- include("../partials/nav")%>
     <h1>Sonny Angel Edit - <%= sonnyangel.name %></h1>
     <form method="POST" action="/sonnyangels/<%=sonnyangel._id%>?_method=PUT">
       <div>
